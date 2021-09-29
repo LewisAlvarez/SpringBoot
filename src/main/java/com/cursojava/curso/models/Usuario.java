@@ -33,13 +33,13 @@ public class Usuario {
     @Getter @Setter @Column(name = "name")
     private String name;
 
-    @Getter @Setter @Column(name = "lastName")
+    @Getter @Setter @Column(name = "last_name")
     private String lastName;
 
     @Getter @Setter @Column(name = "email")
     private String email;
 
-    @Getter @Setter @Column(name = "phoneNumber")
+    @Getter @Setter @Column(name = "phone_number")
     private String phoneNumber;
 
     @Getter @Setter @Column(name = "password")

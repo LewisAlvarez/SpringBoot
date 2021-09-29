@@ -27,7 +27,6 @@ public class UsuarioDaoImpl implements UsuarioDao{
         //Va el nombre de la clase, NO en el nombre de la tabla
         String query = "FROM Usuario"; //Se está haciendo referencia a la clase usuario
         //El entityManager se encarga de hacer la consulta a la db
-        List<Usuario> resultado = entityManager.createQuery(query).getResultList();
-        return resultado;
+        return entityManager.createQuery(query).getResultList();
     }
 }
