@@ -11,6 +11,7 @@ import com.cursojava.curso.models.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class UsuarioController {
     Para usar un parámetro para la modificación de una url de manera dinamica se usa @PathVariable.
      */
 
-    @RequestMapping(value = "usuario/{id}")
+    @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.GET)
     public Usuario getUser(@PathVariable Long id){
         Usuario usuario = new Usuario();
         usuario.setId(id);
@@ -42,7 +43,7 @@ public class UsuarioController {
         return usuario;
     }
 
-    @RequestMapping(value = "usuarios")
+    @RequestMapping(value = "api/usuarios")
     public List<Usuario> getUsers(){
         return usuarioDao.getUsuarios();
     }
@@ -57,14 +58,9 @@ public class UsuarioController {
         return usuario;
     }
 
-    @RequestMapping(value = "usuariohfjg")
-    public Usuario deleteUser(){
-        Usuario usuario = new Usuario();
-        usuario.setName("Car");
-        usuario.setLastName("Alvarez");
-        usuario.setEmail("lewis040@hotmail.es");
-        usuario.setPhoneNumber("31587699453");
-        return usuario;
+    @RequestMapping(value = "api/usuarios/{id}", method = RequestMethod.DELETE)
+    public void deleteUser(@PathVariable Long id){
+        usuarioDao.deleteUsuario(id);
     }
 
     @RequestMapping(value = "usuariol")

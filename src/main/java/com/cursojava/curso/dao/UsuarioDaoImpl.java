@@ -29,4 +29,11 @@ public class UsuarioDaoImpl implements UsuarioDao{
         //El entityManager se encarga de hacer la consulta a la db
         return entityManager.createQuery(query).getResultList();
     }
+
+    @Override
+    public void deleteUsuario(Long id) {
+        //Primero se busca el usario por id en la db
+        Usuario usuario = entityManager.find(Usuario.class, id);
+        entityManager.remove(usuario);
+    }
 }
