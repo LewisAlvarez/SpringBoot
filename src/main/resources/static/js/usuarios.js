@@ -23,7 +23,7 @@ async function cargarUsuarios(){
   let listHTML = '';
   for (let usuario of usuarios){
 
-  let userHTML = '<tr><td>'+usuario.id+''</td><td>'+usuario.name+' '+usuario.lastName+' </td><td>'+usuario.email+' </td><td>'+usuario.phoneNumber+' </td><td><a href="#" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a></td></tr>';
+  let userHTML = '<tr><td>'+usuario.id+'</td><td>'+usuario.name+' '+usuario.lastName+' </td><td>'+usuario.email+' </td><td>'+usuario.phoneNumber+' </td><td><a href="#" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></a></td></tr>';
   listHTML += userHTML;
 
   }
