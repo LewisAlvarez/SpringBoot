@@ -36,4 +36,13 @@ public class UsuarioDaoImpl implements UsuarioDao{
         Usuario usuario = entityManager.find(Usuario.class, id);
         entityManager.remove(usuario);
     }
+
+    @Override
+    public void registerUsuario(Usuario usuario) {
+        //Para guardar el usuario en laa base de datos usamos el metodo merge
+        //entityManager.detach();
+        entityManager.merge(usuario);
+    }
+
+
 }
