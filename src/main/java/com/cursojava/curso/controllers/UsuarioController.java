@@ -8,6 +8,8 @@ Esta clase sirve para controlar las URL que se redirecciona el usuario en la pag
 
 import com.cursojava.curso.dao.UsuarioDao;
 import com.cursojava.curso.models.Usuario;
+import de.mkammerer.argon2.Argon2;
+import de.mkammerer.argon2.Argon2Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -50,7 +52,14 @@ public class UsuarioController {
      */
     @RequestMapping(value = "api/usuarios", method = RequestMethod.POST)
     public void addUsers(@RequestBody Usuario usuario){
-         usuarioDao.registerUsuario(usuario);
+
+        //HASH para la contraseña
+        //Guardar la contraseña en la base de datos hasheada.
+        Argon2 argon2 = Argon2Factory.create(Argon2Factory.Argon2Types.ARGON2id);
+        String hash = argon2.hash(1, 1024, 1, usuario.getPassword());
+        usuario.setPassword(hash);
+
+        usuarioDao.registerUsuario(usuario);
     }
 
     @RequestMapping(value = "usuariohgj")

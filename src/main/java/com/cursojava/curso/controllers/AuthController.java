@@ -2,6 +2,7 @@ package com.cursojava.curso.controllers;
 
 import com.cursojava.curso.dao.UsuarioDao;
 import com.cursojava.curso.models.Usuario;
+import com.cursojava.curso.utils.JWTUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,13 +21,20 @@ public class AuthController {
     @Autowired
     private UsuarioDao usuarioDao;
 
+    @Autowired
+    private JWTUtil jwtUtil;
+
     /*
         @RequestBody --> para convertir el json que se recibe en un objeto tipo Usuario automaticamente.
     */
     @RequestMapping(value = "api/login", method = RequestMethod.POST)
     public String login(@RequestBody Usuario usuario){
-        if (usuarioDao.verificarEmailPassword(usuario)){
-            return "OK";
+        Usuario usuarioLogueado = usuarioDao.obtenerUsuarioPorCredenciales(usuario);
+
+        if (usuarioLogueado != null){
+            //JWT
+          String tokenJWT = jwtUtil.create(String.valueOf(usuarioLogueado.getId()), usuarioLogueado.getEmail());
+          return tokenJWT;
         }
         return "FAIL";
     }
