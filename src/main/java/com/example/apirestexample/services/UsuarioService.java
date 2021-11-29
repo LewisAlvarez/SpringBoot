@@ -4,10 +4,8 @@ import com.example.apirestexample.models.UsuarioModel;
 import com.example.apirestexample.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-
-
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 //@Service-->Para indicar a la clase que se comporte como un servicio para la logica empresarial
@@ -55,6 +53,37 @@ public class UsuarioService  {
         }
         return eliminado;
     }
+
+    /*
+    Guardar varios usuarios
+     */
+
+    public List<UsuarioModel> guardarVariosUsuarios(List<UsuarioModel> usuarios){
+        List<UsuarioModel> usuariosGuardados = new ArrayList<UsuarioModel>();
+
+        for (UsuarioModel user: usuarios) {
+            usuarioRepository.save(user);
+            usuariosGuardados.add(user);
+        }
+
+        return usuariosGuardados;
+    }
+
+    /*
+    Buscar Usuarios por prioridad. Este metodo debe retornar todos los usuario dada una prioridad
+     */
+    public List<UsuarioModel> buscarUsuariosPorPrioridad(Integer prioridad){
+        return usuarioRepository.findByPrioridad(prioridad);
+    }
+
+    /*
+    Buscar Usuarios por nombre
+     */
+    public List<UsuarioModel> buscarUsuariosPorNombre(String nombre){
+        return usuarioRepository.findByNombre(nombre);
+    }
+
+
 
 
 }
