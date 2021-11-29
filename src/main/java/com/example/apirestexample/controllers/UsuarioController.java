@@ -24,4 +24,16 @@ public class UsuarioController {
     public UsuarioModel guardarUsuario(@RequestBody UsuarioModel usuarioModel){
         return usuarioService.guardarUsuario(usuarioModel);
     }
+
+    @GetMapping(path = "/{id}")
+    public UsuarioModel buscarPorID(@PathVariable("id") Long id){
+        return usuarioService.ObtenerUsuarioPorID(id).get();
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public String eliminarUsuarioPorID(@PathVariable("id") Long id){
+        return usuarioService.eliminarUsuario(id)
+                ? "Usuario eliminado, ID:" + id
+                : "El usuario con ID"+id+ "no se ha eliminado";
+    }
 }
