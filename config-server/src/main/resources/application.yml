@@ -6,7 +6,7 @@ spring:
       server:
         git:
           default-label: config-server #Nombre de la rama en la cual quiero que trabajo
-          uri: https://github.com/LewisAlvarez/SpringBoot.git
+          uri: https://github.com/LewisAlvarez/SpringBoot
           search-paths: config-data #Archivos con la configuracion de los microservicios
   application:
     name: config-service
