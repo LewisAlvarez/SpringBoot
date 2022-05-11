@@ -1,6 +1,4 @@
 
-i
-9car/src/main/java/com/car/service/car/CarApplication.java,c\b\cb3031e4f17b49a44c0e79c3676eef4aac731f99
 z
 Juser/src/main/java/com/user/service/user/feing/clients/CarFeingClient.java,0\9\091b018e1e4300bc9f5334337a285b8f7483b24e
 m
@@ -19,7 +17,3 @@ i
 9user/src/main/java/com/user/service/user/models/Bike.java,f\5\f53fab6e9cde96f87125d0b739b6d639aeb49414
 w
 Gbike/src/main/java/com/bike/service/bike/controller/BikeController.java,9\9\99893b2ce135d82ec7f969590ff81a233b6268b1
-<
-user/pom.xml,c\d\cdfe2e323fad8b1bcfe52f68e21783f120cd711e
-<
-bike/pom.xml,d\a\da5d3852202482882097c080635440365f07cc0f

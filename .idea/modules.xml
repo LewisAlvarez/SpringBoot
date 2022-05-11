@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/bike/bike.iml" filepath="$PROJECT_DIR$/bike/bike.iml" />
       <module fileurl="file://$PROJECT_DIR$/car/car.iml" filepath="$PROJECT_DIR$/car/car.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/demo.iml" filepath="$PROJECT_DIR$/config-server/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
     </modules>
   </component>

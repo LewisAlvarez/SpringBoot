@@ -1,0 +1,6 @@
+server:
+  port: 8761
+eureka:
+  client:
+    fetch-registry: false #Para que no se registre a él mismo (Al mismo microservicio)
+    register-with-eureka: false
