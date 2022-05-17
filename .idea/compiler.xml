@@ -11,6 +11,7 @@
         <module name="user" />
         <module name="demo" />
         <module name="eureka-server" />
+        <module name="gateway-service" />
         <module name="bike" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="car" target="11" />
       <module name="demo" target="11" />
       <module name="eureka-server" target="11" />
+      <module name="gateway-service" target="11" />
       <module name="user" target="11" />
     </bytecodeTargetLevel>
   </component>
@@ -28,6 +30,7 @@
       <module name="car" options="-parameters" />
       <module name="demo" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
       <module name="user" options="-parameters" />
     </option>
   </component>

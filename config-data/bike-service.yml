@@ -1,5 +1,5 @@
 server:
-  port: 8003
+  port: ${port:0} #De esta manera springboot asigna un puerto aleatorio a la instancia
 eureka:
   client:
     fetch-registry: true #Para que sí se registre a el servidor de eureka

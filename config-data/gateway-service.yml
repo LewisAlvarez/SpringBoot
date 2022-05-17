@@ -1,0 +1,36 @@
+server:
+  port: 8080
+eureka:
+  client:
+    fetch-registry: true #Para que sí se registre a el servidor de eureka
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka #Ubicacion del servidor eureka
+     instance:
+       hostname: localhost
+message: Hola desde usuario #Test
+
+#Propiedades propias de spring cloud gateway para routing
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enable: true
+      routes:
+        - id: user-service #Nombre del servicio donde se se quiere hacer el routing (Application name)
+          uri: lb://user-service #application name
+          predicates:
+            - Path=/user/**  #This route would match if the request path was user/** anything
+        - id: car-service #Nombre del servicio donde se se quiere hacer el routing (Application name)
+          uri: lb://car-service #application name
+          predicates:
+            - Path=/car/**  #This route would match if the request path was car/** anything
+        - id: bike-service #Nombre del servicio donde se se quiere hacer el routing (Application name)
+          uri: lb://bike-service #application name
+          predicates:
+            - Path=/bike/**  #This route would match if the request path was bike/** anything
+
+
+

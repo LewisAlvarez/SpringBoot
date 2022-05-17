@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: gateway-service #De igual manera se llama el archivo de configuracion
+  cloud:
+    config:
+      enable: true
+      uri: http://localhost:8050 #Ubicacion del servidor de configuracion
