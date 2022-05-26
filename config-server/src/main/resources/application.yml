@@ -5,7 +5,7 @@ spring:
     config:
       server:
         git:
-          default-label: gateway #Nombre de la rama en la cual quiero que trabaje
+          default-label: circuit-breaker #Nombre de la rama en la cual quiero que trabaje
           uri: https://github.com/LewisAlvarez/SpringBoot
           search-paths: config-data #CArdeta donde se encuentran los archivos con la configuracion de los microservicios
   application:

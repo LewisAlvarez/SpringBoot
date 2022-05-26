@@ -8,7 +8,6 @@ eureka:
       default-zone: http://localhost:8761/eureka #Ubicacion del servidor eureka
     instance:
        hostname: localhost
-message: Hola desde usuario #Test
 
 #Propiedades propias de spring cloud gateway para routing
 

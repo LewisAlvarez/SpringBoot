@@ -36,17 +36,11 @@ public class UserService {
     private BikeFeingClient bikeFeingClient;
 
     public List<Car> getCars(int userId){
-        /**El sgte método hace una pétición dada una url, en este caso la url del micro servicio de carros**/
-        List<Car> userCars =
-                restTemplate.getForObject(URL_MICRO_CARS+userId, List.class);
-        return userCars;
+        return carFeingClient.getCars(userId);
     }
 
     public List<Bike> getBikes(int userId){
-        /**El sgte método hace una pétición dada una url, en este caso la url del micro servicio de motos**/
-        List<Bike> userBikes =
-                restTemplate.getForObject(URL_MICRO_BIKES+userId, List.class);
-        return userBikes;
+        return bikeFeingClient.getBikes(userId);
     }
 
     /**

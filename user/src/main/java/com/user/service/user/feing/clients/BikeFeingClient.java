@@ -2,9 +2,7 @@ package com.user.service.user.feing.clients;
 
 import com.user.service.user.models.Bike;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +16,14 @@ public interface BikeFeingClient {
      * @return
      */
     @PostMapping
-    public List<Bike> saveBikes(@RequestBody List<Bike> bikes);
+    List<Bike> saveBikes(@RequestBody List<Bike> bikes);
+
+    /**
+     * Método para obtener los motos de un usuario desde usuario
+     * @param userId
+     * @return
+     */
+    @GetMapping("/user/{userId}")
+    List<Bike> getBikes(@PathVariable("userId") int userId);
 }
+
